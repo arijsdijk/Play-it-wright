@@ -1,5 +1,0 @@
-
-
-npx playwright show-report
-
-npx playwright test --ui
