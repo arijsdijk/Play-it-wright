@@ -1,0 +1,61 @@
+testSuite:
+  testSuiteName: Suite
+  testSuiteDescription: ''
+  persona: User1
+  appLogicalName: pp_taskapp_5af62
+  appId: ''
+  onTestCaseStart: |
+    = 
+    Notify("Testcase started",NotificationType.Success);
+  onTestCaseComplete: |
+    = 
+    Notify(TestCaseResult.TestCaseName & " : "
+            & If( TestCaseResult.Success
+                , " Passed"
+                , TestCaseResult.TestFailureMessage)
+            ,If(  TestCaseResult.Success
+                , NotificationType.Success
+                , NotificationType.Error)
+    );
+  onTestSuiteComplete: ""
+  networkRequestMocks: 
+  testCases:
+  - testCaseName: Ask a question (success)
+    testCaseDescription: ''
+    testSteps: |
+      = 
+      Set(varCountQuestions, CountRows(colQuestions));
+      Select('btnQuicklinkToHelp');
+      SetProperty('txtHelpSubject'.Text, "Registering event hours");
+      SetProperty('txtHelpDescription'.Text, "I'm at an awesome event right now, but how should I actually register the hours for attending an event?");
+      Select('btnHelpSave');
+      Assert(CountRows(colQuestions) > varCountQuestions, "Record successfully saved in collection");
+      Clear(colQuestions);
+  - testCaseName: Ask a question (failed)
+    testCaseDescription: ''
+    testSteps: |
+      = 
+      Set(varCountQuestions, CountRows(colQuestions));
+      Select('btnQuicklinkToHelp');
+      SetProperty('txtHelpSubject'.Text, "Registering event hours");
+      Select('btnHelpSave');
+      Assert(CountRows(colQuestions) > varCountQuestions, "Saving the record failed");
+      Clear(colQuestions);
+testSettings:
+  filePath: 
+  browserConfigurations:
+  - browser: Chromium
+    device: 
+    screenWidth: 0
+    screenHeight: 0
+  locale: en
+  recordVideo: true
+  headless: true
+  enablePowerFxOverlay: false
+  timeout: 30000
+environmentVariables:
+  filePath: 
+  users:
+  - personaName: User1
+    emailKey: user1Email
+    passwordKey: user1Password
