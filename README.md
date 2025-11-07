@@ -27,3 +27,7 @@ Note! In the example files you need to add your own URL, Username and Password.
 |[canvasapp.spec.ts](./Playwright%20Tests/directions.spec.ts)| Power Apps Canvas app example |
 |[model-driven.spec.ts](./Playwright%20Tests/directions.spec.ts)| Power Apps Canvas app example |
 
+
+### Contact
+
+If you have any questions please contact me via [Linkedin](https://www.linkedin.com/in/arjanrijsdijk/)
