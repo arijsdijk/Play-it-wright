@@ -30,4 +30,4 @@ Note! In the example files you need to add your own URL, Username and Password.
 
 ### Contact
 
-If you have any questions please contact me via [Linkedin](https://www.linkedin.com/in/arjanrijsdijk/)
+If you have any questions please contact me via [Linkedin](https://www.linkedin.com/in/arjanrijsdijk/) or create a issue on this repository.
